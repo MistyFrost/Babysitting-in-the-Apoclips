@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/249300__suntemple__access-denied.wav-70e0d1aa17b2f87f81019e7540de1a67.sample"
+
+[deps]
+
+source_file="res://Sounds/249300__suntemple__access-denied.wav"
+dest_files=[ "res://.import/249300__suntemple__access-denied.wav-70e0d1aa17b2f87f81019e7540de1a67.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

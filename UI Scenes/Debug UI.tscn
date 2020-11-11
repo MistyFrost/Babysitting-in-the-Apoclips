@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://UI Scenes/Debug UI.gd" type="Script" id=1]
+
+[node name="Debug UI" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pause Wndow" type="PopupPanel" parent="."]
+margin_left = 29.0
+margin_top = 29.0
+margin_right = 198.0
+margin_bottom = 167.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="CenterContainer" parent="Pause Wndow"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Button" type="Label" parent="Pause Wndow/GridContainer"]
+margin_left = 29.0
+margin_top = 7.0
+margin_right = 131.0
+margin_bottom = 123.0
+text = "Game Paused
+
+Press the 
+
+HOME BUTTON 
+
+to Continue"
+align = 1
+valign = 1

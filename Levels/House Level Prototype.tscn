@@ -1,0 +1,96 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Level Asets/Floor.tres" type="Material" id=1]
+[ext_resource path="res://Level Asets/Walls.tscn" type="PackedScene" id=2]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="BoxShape" id=2]
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.509804, 0.239216, 0, 1 )
+emission_enabled = true
+emission = Color( 0.415686, 0.192157, 0, 1 )
+emission_energy = 1.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[node name="House Level Prototype" type="Spatial"]
+
+[node name="Floor" type="MeshInstance" parent="."]
+transform = Transform( 4, 0, 0, 0, 0.225819, 0, 0, 0, 9.1, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody" type="StaticBody" parent="Floor"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Cieling" type="MeshInstance" parent="."]
+transform = Transform( 4, 0, 0, 0, 0.225819, 0, 0, 0, 9.1, 0, 5.88318, 0 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody" type="StaticBody" parent="Cieling"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Cieling/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Floor 2nd" type="MeshInstance" parent="."]
+transform = Transform( 3.15932, 0, 0, 0, 0.100345, 0, 0, 0, 9.1, -0.778376, 2.77096, 0 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody" type="StaticBody" parent="Floor 2nd"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor 2nd/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Floor 2nd Landing" type="MeshInstance" parent="."]
+transform = Transform( 0.780873, 0, 0, 0, 0.100345, 0, 0, 0, 2.05234, 3.15317, 2.77096, -7.0426 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody" type="StaticBody" parent="Floor 2nd Landing"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor 2nd Landing/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Sun" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -0.707107, 0.707107, 0, -0.707107, -0.707107, 0, 0, 0 )
+visible = false
+shadow_enabled = true
+
+[node name="Walls" type="Spatial" parent="."]
+
+[node name="Wall" parent="Walls" instance=ExtResource( 2 )]
+transform = Transform( 0.09, 0, 0, 0, 3, 0, 0, 0, 9, 4, 2.77902, 0 )
+
+[node name="Wall 2" parent="Walls" instance=ExtResource( 2 )]
+transform = Transform( 0.09, 0, 0, 0, 3, 0, 0, 0, 9, -4, 2.77902, 0 )
+
+[node name="Wall 3" parent="Walls" instance=ExtResource( 2 )]
+transform = Transform( 4, 0, 0, 0, 3, 0, 0, 0, 0.09, 0, 2.77902, -9 )
+
+[node name="Wall 4" parent="Walls" instance=ExtResource( 2 )]
+transform = Transform( 4, 0, 0, 0, 3, 0, 0, 0, 0.09, 0, 2.77902, 9 )
+
+[node name="StairsP1" type="CSGPolygon" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1.24681, 0, -5.44997e-08, 3.94458, 0.229452, 0 )
+use_collision = true
+polygon = PoolVector2Array( 0, 0, 4, 2.6, 4, 0 )
+depth = 1.533
+material = SubResource( 3 )
