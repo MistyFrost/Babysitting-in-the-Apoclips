@@ -1,22 +1,18 @@
 extends Spatial
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
+signal Food_added
 
 func _on_Area_body_entered(body):
 	if body.is_in_group("Player"):
 		$AnimationPlayer.play("Open Door")
-		body.food = 100
+		
+		
+
+
+
+func _on_Area_body_exited(body):
+	body.food += 10
+	emit_signal("Food_added")
+	$AnimationPlayer.play_backwards("Open Door")
+	
+

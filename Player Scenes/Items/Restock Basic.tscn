@@ -3,17 +3,17 @@
 [ext_resource path="res://Player Scenes/Items/Bread Half.tres" type="ArrayMesh" id=1]
 [ext_resource path="res://Player Scenes/Items/Restock Basic.gd" type="Script" id=2]
 
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.266667, 0.25098, 0.25098, 1 )
 
-[sub_resource type="SpatialMaterial" id=1]
+[sub_resource type="SpatialMaterial" id=2]
 emission_enabled = true
 emission = Color( 1, 0.027451, 0.027451, 1 )
 emission_energy = 1.0
 emission_operator = 0
 emission_on_uv2 = false
 
-[sub_resource type="SpatialMaterial" id=2]
+[sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 0.419608, 0.137255, 0.137255, 1 )
 emission_enabled = true
 emission = Color( 1, 0.964706, 0.964706, 1 )
@@ -127,7 +127,7 @@ script = ExtResource( 2 )
 transform = Transform( 0.858162, 0, 0, 0, 0.858162, 0, 0, 0, 1, 0, 0, 0.220464 )
 height = 0.15246
 depth = 1.26588
-material = SubResource( 3 )
+material = SubResource( 1 )
 
 [node name="CSGBox" type="CSGBox" parent="."]
 
@@ -137,12 +137,12 @@ operation = 2
 [node name="CSGBox2" type="CSGBox" parent="CSGBox/CSGCombiner"]
 transform = Transform( 0.858162, 0, 0, 0, 0.858162, 0, 0, 0, 1, 0, 0, 0.413132 )
 depth = 2.55321
-material = SubResource( 1 )
+material = SubResource( 2 )
 
 [node name="Door" type="CSGBox" parent="."]
-transform = Transform( 0.881501, 0, -0.472182, 0, 1, 0, 0.472182, 0, 0.881501, -0.151023, 0, 1.53408 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.10011 )
 depth = 0.172809
-material = SubResource( 2 )
+material = SubResource( 3 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 2.93242, 0, 0, 0, -1.2818e-07, -2.93242, 0, 2.93242, -1.2818e-07, 0, 0.103127, 0.587112 )
@@ -164,3 +164,4 @@ shape = SubResource( 5 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0693641 )
 shape = SubResource( 6 )
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
+[connection signal="body_exited" from="Area" to="." method="_on_Area_body_exited"]

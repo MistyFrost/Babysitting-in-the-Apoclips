@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Player Scenes/Items/Bread Half.tres" type="ArrayMesh" id=1]
+
+[node name="Bread Half Loaf HR" type="MeshInstance"]
+mesh = ExtResource( 1 )
+material/0 = null

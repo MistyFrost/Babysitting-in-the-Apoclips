@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Level Asets/Food Launcher.gd" type="Script" id=1]
+[ext_resource path="res://Player Scenes/Food Launcher.gd" type="Script" id=1]
 [ext_resource path="res://Player Scenes/Items/Bread Half.tres" type="ArrayMesh" id=3]
+
 
 [node name="Food Launcher" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 0.0174523, 0.999848, 0, -0.999848, 0.0174523, 0.099, 0.342, 0.1 )
